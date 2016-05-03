@@ -633,16 +633,17 @@ this.loadExternalImages = {
             images.push(images_list[i]);
         }
 
-        var data;
-        if (parameter == 'images') {
-            data = {
-                'images': JSON.stringify(images)
-            };
-        } else {
-            data = {
-                'annotations': JSON.stringify(images)
-            };
-        }
+        var data = {};
+        data[parameter] = JSON.stringify(images);
+//        if (parameter == 'images') {
+//            data = {
+//                'images': JSON.stringify(images)
+//            };
+//        } else {
+//            data = {
+//                'annotations': JSON.stringify(images)
+//            };
+//        }
 
         var request = $.get("images/", data);
 
@@ -1715,9 +1716,10 @@ this.init = function() {
         reader.readAsText(file);
     }
 
-    if (_self.utils.getParameter('images').length || _self.utils.getParameter('annotations').length) {
+    if (_self.utils.getParameter('images').length || _self.utils.getParameter('annotations').length || _self.utils.getParameter('editorial').length) {
         _self.loadExternalImages.init('images');
         _self.loadExternalImages.init('annotations');
+        _self.loadExternalImages.init('editorial');
     } else {
         _self.imagesBox.show();
     }

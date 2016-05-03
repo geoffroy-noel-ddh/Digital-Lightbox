@@ -22,16 +22,17 @@ this.loadExternalImages = {
             images.push(images_list[i]);
         }
 
-        var data;
-        if (parameter == 'images') {
-            data = {
-                'images': JSON.stringify(images)
-            };
-        } else {
-            data = {
-                'annotations': JSON.stringify(images)
-            };
-        }
+        var data = {};
+        data[parameter] = JSON.stringify(images);
+//        if (parameter == 'images') {
+//            data = {
+//                'images': JSON.stringify(images)
+//            };
+//        } else {
+//            data = {
+//                'annotations': JSON.stringify(images)
+//            };
+//        }
 
         var request = $.get("images/", data);
 

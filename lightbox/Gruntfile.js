@@ -77,13 +77,22 @@ module.exports = function(grunt) {
                 dest: 'static/dist/css/',
                 ext: '.min.css'
             }
+        },
+		
+        watch: {
+            scripts: {
+                files: ['static/src/**/*.js', 'static/src/**/*.less', 'static/src/**/*.css'],
+                tasks: ['less', 'concat', 'uglify', 'cssmin', 'copy'],
+            }
         }
+		
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-copy');
     grunt.registerTask('default', ['less', 'concat', 'uglify', 'cssmin', 'copy']);
 

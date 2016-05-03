@@ -334,9 +334,10 @@ this.init = function() {
         reader.readAsText(file);
     }
 
-    if (_self.utils.getParameter('images').length || _self.utils.getParameter('annotations').length) {
+    if (_self.utils.getParameter('images').length || _self.utils.getParameter('annotations').length || _self.utils.getParameter('editorial').length) {
         _self.loadExternalImages.init('images');
         _self.loadExternalImages.init('annotations');
+        _self.loadExternalImages.init('editorial');
     } else {
         _self.imagesBox.show();
     }

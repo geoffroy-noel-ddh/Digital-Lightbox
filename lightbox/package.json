@@ -27,11 +27,13 @@
   },
   "homepage": "https://github.com/Gbuomprisco/Digital-Lightbox",
   "devDependencies": {
-    "grunt": "latest",
+    "grunt": "~0.4.2",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-concat": "latest",
     "grunt-copy": "latest"
   }
 }
